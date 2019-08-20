@@ -490,9 +490,25 @@ Use it to get User Entity
    * @callback params {Object}user
    * @public
    */
-    getUser( userId, 
-              (userEntity) => {})
+    OstWalletSdk.getUser( userId, 
+                          (userEntity) => {})
 ```
+
+### getCurrentDevice
+Get user entity for given userId.
+
+```javascript
+/**
+   * Get current device object for provided userId
+   * @param {String} userId - Ost User id
+   * @param {function} callback - Gets current device object if present else nil
+   * @callback params {Object} device
+   * @public
+   */
+   OstWalletSdk.getCurrentDeviceForUserId( userId, 
+                                           (deviceEntity) => {})
+```
+
 
 ### getToken
 Use it to get Token Entity
@@ -505,8 +521,25 @@ Use it to get Token Entity
     * @callback params {Object}token
     * @public
     */
-     getToken( tokenId, 
-              (tokenEntity) => {})
+     OstWalletSdk.getToken( tokenId, 
+                            (tokenEntity) => {})
+```
+
+### getActiveSessions
+Use this method to fetch active sessions from current device for user.
+
+```javascript
+/**
+   * Get user object for provided userId
+   * @param {String} userId - Ost User id
+   * @param {String} minimumSpendingLimitInWei - Minimum spending limit
+   * @param {function} callback - Gets array of current device sessions.
+   * @callback params {Array} array of sessions
+   * @public
+   */
+   OstWalletSdk.getActiveSessionsForUserId(userId, 
+                                           minimumSpendingLimitInWei, 
+                                           (activeSessions) => {})
 ```
 
 # SDK WorkFlow Callbacks
